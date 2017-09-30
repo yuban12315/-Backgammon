@@ -7,7 +7,7 @@ import app.views.Start;
 
 public class Main extends Application implements EventHandler<WindowEvent> {
     public void start(Stage stage)throws Exception{
-        StageController stageController=StageController.getStageController();
+        StageController stageController=StageController.getInstance();
         Start start=new Start();
         stageController.pushStage(start.getStage());
     }

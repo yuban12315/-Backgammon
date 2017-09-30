@@ -10,16 +10,17 @@ public class StageController {
     public static StageController stageController = null;
 
     public void pushStage(Stage stage) {
-        System.out.println(stages.size());
         stages.push(stage);
+        currentStage=stage;
         stage.show();
+
     }
 
     private StageController() {
         stages=new Stack<Stage>();
     }
 
-    public static StageController getStageController() {
+    public static StageController getInstance() {
         if (stageController == null) {
             stageController = new StageController();
         }
@@ -30,6 +31,10 @@ public class StageController {
         if (!stages.empty()) {
             currentStage.close();
             currentStage = stages.pop();
+            System.out.println(stages.size());
+        }
+        if (stages.empty()){
+            currentStage.close();
         }
     }
 }
