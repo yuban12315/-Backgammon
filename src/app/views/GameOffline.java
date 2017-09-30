@@ -1,4 +1,4 @@
-package views;
+package app.views;
 
 public class GameOffline{
 }

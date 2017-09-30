@@ -1,11 +1,9 @@
-import controllers.StageController;
-import controllers.StartCtrl;
+import app.controllers.StageController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import views.GameOnline;
-import views.Start;
+import app.views.Start;
 
 public class Main extends Application implements EventHandler<WindowEvent> {
     public void start(Stage stage)throws Exception{
@@ -21,6 +19,7 @@ public class Main extends Application implements EventHandler<WindowEvent> {
     public void handle(WindowEvent event) {
         try {
             //NetService.getInstance(Controller.netType).close();
+            System.out.println("ss");
         } catch (Exception e) {
             //ignore this
         }

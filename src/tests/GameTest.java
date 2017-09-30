@@ -2,7 +2,7 @@ package tests;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import views.GameOnline;
+import app.views.GameOnline;
 
 public class GameTest extends Application {
 

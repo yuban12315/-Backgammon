@@ -1,4 +1,4 @@
-package views;
+package app.views;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

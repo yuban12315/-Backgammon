@@ -1,12 +1,11 @@
-package views;
+package app.views;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
-import java.beans.EventHandler;
 
 public class Start {
 
@@ -17,6 +16,12 @@ public class Start {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("五子棋---开始界面");
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                System.out.println("ss");
+            }
+        });
     }
 
     public Stage getStage() {
