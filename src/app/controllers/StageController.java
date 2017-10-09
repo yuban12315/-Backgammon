@@ -37,4 +37,10 @@ public class StageController {
             currentStage.close();
         }
     }
+
+    public void pop(){
+        if(!stages.empty()){
+            stages.pop();
+        }
+    }
 }

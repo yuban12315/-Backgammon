@@ -1,5 +1,6 @@
 package app.views;
 
+import app.controllers.StageController;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,12 +26,14 @@ public class GameOnline {
 
         Parent root = FXMLLoader.load(getClass().getResource("gameO.fxml"));
         stage.setTitle("五子棋");
-        stage.setScene(new Scene(root, 720, 720));
+        stage.setScene(new Scene(root, 770, 1004));
         stage.setResizable(false);
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
                 //关闭连接
+                StageController stageController=StageController.getInstance();
+                stageController.pop();
             }
         });
     }
