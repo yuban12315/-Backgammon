@@ -14,23 +14,43 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="TOP_CENTER" hgap="10.0" minHeight="1004.0" prefHeight="1004.0" prefWidth="770.0000999999975" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="app.controllers.OnlineGameCtrl">
+<GridPane alignment="TOP_CENTER" hgap="10.0" minHeight="908.0" minWidth="731.0000558593674" prefHeight="934.0" prefWidth="750.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="app.controllers.OnlineGameCtrl">
   <children>
     <!--onMouseClicked="#handleCanvasClicked"-->
-    <Canvas fx:id="canvas" height="750.0" scaleX="1.0" scaleY="1.0" width="750.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" onMouseClicked="#handleCanvasClicked"/>
-    <Button contentDisplay="CENTER" defaultButton="true" minWidth="150.0" mnemonicParsing="false" prefWidth="100.0" text="再来一局" underline="false" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" onAction="#again">
-      <font>
-        <Font size="20.0" fx:id="x1" />
-      </font>
+    <Canvas fx:id="canvas" height="750.0" onMouseClicked="#handleCanvasClicked" scaleX="1.0" scaleY="1.0" width="750.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
       <GridPane.margin>
-        <Insets bottom="20.0" top="20.0" />
+        <Insets left="10.0" />
       </GridPane.margin>
-    </Button>
-    <Button cancelButton="false" contentDisplay="CENTER" font="$x1" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#back" text="返回" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-      <GridPane.margin>
-        <Insets bottom="20.0" top="20.0" />
-      </GridPane.margin>
-    </Button>
+    </Canvas>
+    <GridPane prefHeight="1000.0" prefWidth="749.9999000000025" GridPane.columnIndex="0" GridPane.rowIndex="2">
+      <children>
+        <Button mnemonicParsing="false" onAction="#startServer" prefWidth="150.0" text="创建游戏" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+          <font>
+            <Font size="20.0" fx:id="x1" />
+          </font>
+          <GridPane.margin>
+            <Insets top="10.0" fx:id="x3" />
+          </GridPane.margin>
+        </Button>
+        <Button font="$x1" mnemonicParsing="false" onAction="#connectServer" prefWidth="150.0" text="寻找游戏" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x3" GridPane.rowIndex="1" />
+        <Button cancelButton="false" contentDisplay="CENTER" font="$x1" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#back" text="返回" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.margin="$x3" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+        <Button contentDisplay="CENTER" defaultButton="false" font="$x1" minWidth="150.0" mnemonicParsing="false" onAction="#again" prefWidth="100.0" text="再来一局" underline="false" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.margin="$x3" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
   </children>
   <columnConstraints>
     <ColumnConstraints maxWidth="750.0" prefWidth="750.0" />
@@ -38,16 +58,31 @@
     <ColumnConstraints maxWidth="0.0" prefWidth="0.0" />
   </columnConstraints>
   <padding>
-    <Insets bottom="20.0" left="20.0" top="20.0" />
+    <Insets fx:id="x2" />
   </padding>
   <rowConstraints>
     <RowConstraints maxHeight="0.0" prefHeight="0.0" />
     <RowConstraints maxHeight="750.0" prefHeight="750.0" />
+    <RowConstraints maxHeight="750.0" prefHeight="80.0" />
     <RowConstraints maxHeight="34.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="34.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="54.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="54.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="500.0" prefHeight="0.0" />
     <RowConstraints maxHeight="500.0" prefHeight="0.0" />
     <RowConstraints maxHeight="0.0" prefHeight="0.0" />
-    <RowConstraints maxHeight="74.0" prefHeight="74.0" />
-    <RowConstraints maxHeight="74.0" prefHeight="74.0" />
+    <RowConstraints maxHeight="0.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="74.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="74.0" prefHeight="0.0" />
+    <RowConstraints maxHeight="74.0" prefHeight="0.0" />
     <RowConstraints maxHeight="34.0" prefHeight="0.0" />
     <RowConstraints maxHeight="0.0" prefHeight="0.0" />
   </rowConstraints>

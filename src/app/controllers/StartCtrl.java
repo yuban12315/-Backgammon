@@ -14,9 +14,9 @@ public class StartCtrl {
     @FXML
     protected void offlineGame() throws Exception{
         System.out.println("单机游戏");
-//        StageController stageController=StageController.getInstance();
-//        GameOffline gameOffline=new GameOffline();
-//        stageController.pushStage(gameOffline.);
+      StageController stageController=StageController.getInstance();
+        GameOffline gameOffline=new GameOffline();
+        stageController.pushStage(gameOffline.getStage());
     }
 
     @FXML

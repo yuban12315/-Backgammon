@@ -16,6 +16,7 @@ public class StageController {
 
     }
 
+
     private StageController() {
         stages=new Stack<Stage>();
     }

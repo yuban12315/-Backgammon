@@ -36,16 +36,21 @@ public abstract class GameCtrl {
     protected double gapX, gapY;
     protected double chessSize;
     protected double broadPadding = 27;
+    protected Position lastPostion;
     //棋盘外的标识
     protected String[] markX = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U"};
     protected String[] markY = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"};
     protected StageController stageController;
-    protected Boolean isOtherOK=false; //他人（其他玩家|电脑）是否已经准备好
+    protected Boolean isOtherOK=true; //他人（其他玩家|电脑）是否已经准备好
     protected Chess[][] game = new Chess[21][21]; //棋盘，成员为Chess的enum
     protected Chess currentChess= Chess.BLACK;//黑棋先下
 
     public enum Chess {
         BLACK, WHITE
+    }
+
+    protected enum Direction {
+        TOP_LEFT, TOP, TOP_RIGHT, RIGHT, RIGHT_DOWN, DOWN, DOWN_LEFT, LEFT
     }
 
     GameCtrl() {

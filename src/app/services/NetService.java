@@ -27,7 +27,7 @@ public class NetService {
 
     private ServerSocket serverSocket;
 
-    private static final int PORT = 1594;
+    private static final int PORT = 3000;
 
     private static NetService client;
     private static NetService server;
@@ -58,7 +58,7 @@ public class NetService {
     }
 
 
-    void connectToServer(String ip) {
+    public void connectToServer(String ip) {
         try {
             socket = new Socket(ip, PORT);
             init();
@@ -73,7 +73,8 @@ public class NetService {
      *
      * @throws IOException
      */
-     private void init() throws IOException {
+    private void init() throws IOException {
+        System.out.println("初始化");
         is = socket.getInputStream();
         os = socket.getOutputStream();
         br = new BufferedReader(new InputStreamReader(is, "utf-8"));
@@ -97,7 +98,7 @@ public class NetService {
 
     public void close() {
         try {
-//            br.close();
+            //           br.close();
             pw.close();
             socket.close();
             if (OnlineGameCtrl.netType == OnlineGameCtrl.NetType.SERVER) {
@@ -108,7 +109,7 @@ public class NetService {
         }
     }
 
-    interface NetStateChange {
+    public interface NetStateChange {
         void onServerOK();
 
         void onConnect();
@@ -122,18 +123,17 @@ public class NetService {
         String message = null;
         try {
             message = br.readLine();
-        }catch (SocketException se){
-            if(nsc!=null){
+        } catch (SocketException se) {
+            if (nsc != null) {
                 nsc.onDisconnect();
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return message;
     }
 
-
-    void setNetStateChangeListener(NetStateChange nsc) {
+    public void setNetStateChangeListener(NetStateChange nsc) {
         this.nsc = nsc;
     }
 
@@ -155,7 +155,7 @@ public class NetService {
                     }
                     startRead();
                     break;
-                } catch (IOException e) {
+                } catch (Exception e) {
                     System.out.print("Server failure\n");
                     e.printStackTrace();
                     try {
