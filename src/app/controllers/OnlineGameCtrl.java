@@ -2,6 +2,7 @@ package app.controllers;
 
 
 import app.services.NetService;
+import app.utils.Position;
 import app.views.GameOnline;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -135,6 +136,7 @@ public class OnlineGameCtrl extends GameCtrl implements NetService.NetStateChang
         chessSize = gapX * 0.8;
         cleanChessBoard();
     }
+
     @Override
     public void onConnect() {
         System.out.println("some one connected");
