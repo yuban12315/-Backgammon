@@ -49,7 +49,8 @@ public class OfflineGameCtrl extends GameCtrl {
             currentChess = Chess.WHITE;
 
             if (isOtherOK) {
-                Position AIp = AI.chooseChess(game);
+                AI.setGame(game);
+                Position AIp = AI.chooseChess(p.x,p.y);
                 System.out.println("白棋走子:" + AIp.toString());
                 drawChess(currentChess, AIp);
                 isOtherOK = false;
@@ -72,6 +73,7 @@ public class OfflineGameCtrl extends GameCtrl {
     @FXML
     protected void again() {
         cleanChessBoard();
+        isOtherOK = true;
 
         System.out.println("重新开始");
     }
@@ -117,12 +119,9 @@ public class OfflineGameCtrl extends GameCtrl {
         alert.show();
         currentChess = Chess.BLACK;
         alert.setOnCloseRequest(event -> {
-            cleanChessBoard();
-            game = new Chess[21][21];
-            System.out.println("新的一局开始了");
+            //cleanChessBoard();
+            //game = new Chess[21][21];
             currentChess = Chess.BLACK;
-            isOtherOK = true;
-
         });
 
     }
